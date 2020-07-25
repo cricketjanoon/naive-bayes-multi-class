@@ -9,16 +9,20 @@ import numpy as np
 import re
 file = open("LSI-data.txt")
 
-#------------------------
-numberOfTrainingSet = 32604
-#------------------------
+#------------------------------------------------
+#There are 32604 news articles, of which I have taken 7 test examples from the last 104
+#The rest 32500 are training set, you can choose smaller set as it takes long time to train (1000-5000 are enough)
+numberOfTrainingSet = 32500
+#------------------------------------------------
 
-# testDoc = "hp raises dividend, touts cloud computing"
-# testDoc = "china hails north korean leader as he tours country"
-#testDoc = "jack warner's threatened soccer tsunami remains stuck in the doldrums, the corruption"
-#testDoc = "strip mall to catch a glimpse of the boxer manny pacquiao working"
-# testDoc = "andrew d. hamingson, point to anger about costly"
-testDoc = "government resigns: state television"
+testDoc = "france and the united states agree on how to use command structure" #label: world
+# testDoc = "fertility treatment can use semen from men with hiv" #label: health
+# testDoc = "civil rights lawyers for the justice department, in a switch from the bush administration" #label: us
+# testDoc = "grab your magic earrings: 'jem' returns to tv!" #label: entertainment
+# testDoc = "the former president of taylor" #label: business
+# testDoc = "twitter, after threatening to leave the city because of a payroll tax" # label: sci_tech
+# testDoc = "alex burrows took a day off from hockey, but not from his thoughts" #label: sports
+
 testDoc = re.sub(r'[^\w\s_]+', '', testDoc)
 
 
